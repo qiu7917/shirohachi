@@ -1,8 +1,15 @@
 $tab: 1024px;
+$tab2: 768px;
 $sp: 450px;
 
 @mixin tab {
     @media screen and (max-width: ($tab)) {
+        @content;
+    }
+}
+
+@mixin tab2 {
+    @media screen and (max-width: ($tab2)) {
         @content;
     }
 }

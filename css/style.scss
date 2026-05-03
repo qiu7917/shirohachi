@@ -68,7 +68,6 @@ li {
 
         @include m.tab {
             font-size: 32px;
-
         }
     }
 }
@@ -168,7 +167,6 @@ header {
                     position: absolute;
                     top: 0;
                     right: -100%;
-                    // right: 0;
                     padding: 75px 30px 54px;
                     background-color: var(--color-accent);
                     transition: all 0.5s;
@@ -192,7 +190,6 @@ header {
                             position: absolute;
                             left: 0;
                             bottom: -10px;
-                            // transform: translateY(10px);
                             transition: all 0.5s;
                             opacity: 0;
 
@@ -270,9 +267,7 @@ header {
             span {
                 &:nth-child(1) {
                     transform: translateY(500%) rotate(-225deg);
-                    // top: 50%;
                     background-color: #898989;
-
                 }
 
                 &:nth-child(2) {
@@ -281,7 +276,6 @@ header {
 
                 &:nth-child(3) {
                     transform: translateY(-500%) rotate(225deg);
-                    // top: 50%;
                     background-color: #898989;
                 }
             }
@@ -362,13 +356,13 @@ header {
         background-repeat: no-repeat;
         background-size: cover;
         opacity: 0.3;
-        height: auto;
-        width: 37%;
+        height: 116%;
+        width: auto;
         aspect-ratio: 134 / 135;
         position: absolute;
         bottom: 0;
         right: 0;
-        transform: translateY(50%);
+        transform: translateY(45%);
         z-index: 0;
 
         @include m.tab {
@@ -377,8 +371,8 @@ header {
             background-size: cover;
             aspect-ratio: 247 / 408;
             opacity: 1;
-            height: auto;
-            width: 63%;
+            height: 58%;
+            width: auto;
             transform: translateY(30%);
         }
     }
@@ -399,6 +393,8 @@ header {
             background: url(../img/news-bg-sp.png);
             background-repeat: no-repeat;
             background-size: cover;
+            aspect-ratio: 13 / 3;
+
         }
     }
 
@@ -494,6 +490,14 @@ header {
     padding-bottom: 220px;
     position: relative;
 
+    @include m.tab {
+        padding-top: 100px;
+    }
+
+    @include m.tab2 {
+        padding-top: 70px;
+    }
+
     &::after {
         content: "";
         background: url(../img/story-bg.png);
@@ -511,8 +515,8 @@ header {
             background: url(../img/story-bg-sp.png);
             background-repeat: no-repeat;
             background-size: contain;
-            height: auto;
-            width: 50%;
+            height: 52%;
+            width: auto;
             aspect-ratio: 22 / 45;
             top: 55%;
         }
@@ -541,13 +545,23 @@ header {
             transform-origin: center;
             position: relative;
             z-index: 2;
+            pointer-events: none;
 
             .swiper-wrapper {
                 display: flex;
                 align-items: flex-start;
                 padding: 70px 0 150px;
+                z-index: auto;
 
                 @include m.tab {
+                    padding: 50px 0 100px;
+                }
+
+                @include m.tab2 {
+                    padding: 70px 0 100px;
+                }
+
+                @include m.sp {
                     padding: 50px 0 100px;
                 }
 
@@ -561,7 +575,8 @@ header {
                     transform-origin: center;
                     cursor: pointer;
                     height: auto;
-                    z-index: 2;
+                    z-index: 1;
+                    pointer-events: auto;
 
                     img {
                         width: 100%;
@@ -614,7 +629,7 @@ header {
 
                     &:hover {
                         transform: scale(1.4);
-                        z-index: 12;
+                        z-index: 100 !important;
                         opacity: 1;
 
                         @include m.tab {
@@ -635,7 +650,8 @@ header {
             left: 0;
             right: 0;
             text-align: center;
-            z-index: 10;
+            z-index: 1;
+            pointer-events: auto;
 
             .swiper-pagination-bullet {
                 width: 13px;
@@ -643,6 +659,7 @@ header {
                 background: rgb(39, 69, 100, 0.3);
                 opacity: 1;
                 margin: 0 10px;
+                cursor: pointer;
 
                 &-active {
                     background: var(--color-main);
@@ -759,8 +776,8 @@ header {
             background: url(../img/profile-bg-sp.png);
             background-repeat: no-repeat;
             background-size: contain;
-            height: auto;
-            width: 35%;
+            height: 49%;
+            width: auto;
             aspect-ratio: 39 / 95;
             top: -1%;
             right: 0;

@@ -6,7 +6,6 @@
 }
 
 html {
-  font-size: 100%;
   color: var(--text-color);
   height: 100%;
   font-family: "Noto Sans JP", sans-serif;
@@ -324,7 +323,6 @@ header .wrapper .header-nav .hamburger span:nth-child(3) {
   background: url(../img/news-bg2.png);
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.3;
   height: 116%;
   width: auto;
   aspect-ratio: 134/135;
@@ -333,6 +331,7 @@ header .wrapper .header-nav .hamburger span:nth-child(3) {
   right: 0;
   transform: translateY(45%);
   z-index: 0;
+  mix-blend-mode: multiply;
 }
 @media screen and (max-width: 1024px) {
   #news::before {
@@ -390,7 +389,7 @@ header .wrapper .header-nav .hamburger span:nth-child(3) {
   }
 }
 #news .wrapper .news-list .news-item a {
-  width: 100%;
+  display: block;
   background-color: var(--white);
   padding: 30px;
 }
@@ -446,12 +445,13 @@ header .wrapper .header-nav .hamburger span:nth-child(3) {
 
 #story {
   padding-top: 50px;
-  padding-bottom: 220px;
+  padding-bottom: 180px;
   position: relative;
 }
 @media screen and (max-width: 1024px) {
   #story {
     padding-top: 100px;
+    padding-bottom: 200px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -676,7 +676,7 @@ header .wrapper .header-nav .hamburger span:nth-child(3) {
     font-size: 16px;
   }
 }
-#soul .cloud-3 {
+#soul .cloud-3-pc {
   position: absolute;
   top: 0;
   right: 0;
@@ -685,8 +685,24 @@ header .wrapper .header-nav .hamburger span:nth-child(3) {
   z-index: 10;
 }
 @media screen and (max-width: 1024px) {
-  #soul .cloud-3 {
+  #soul .cloud-3-pc {
     width: 34%;
+    display: none;
+  }
+}
+#soul .cloud-3-sp {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-78%);
+  width: 19%;
+  z-index: 10;
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  #soul .cloud-3-sp {
+    width: 34%;
+    display: block;
   }
 }
 #soul .cloud-4 {
@@ -823,6 +839,7 @@ header .wrapper .header-nav .hamburger span:nth-child(3) {
   padding: 19px 114px;
   border-radius: 999px;
   position: relative;
+  transition: all 0.5s;
 }
 @media screen and (max-width: 1024px) {
   #contact .wrapper .contact-btn {

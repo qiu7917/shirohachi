@@ -9,7 +9,6 @@
 }
 
 html {
-    font-size: 100%;
     color: var(--text-color);
     height: 100%;
     font-family: "Noto Sans JP", sans-serif;
@@ -53,10 +52,10 @@ li {
     margin-bottom: 50px;
     margin-left: 26px;
 
+
     @include m.tab {
         text-align: center;
         margin-left: 0;
-
     }
 
     .section-title-en {
@@ -93,7 +92,6 @@ li {
 }
 
 // ===== header ==========================
-
 header {
     height: 90px;
     width: 100%;
@@ -284,7 +282,6 @@ header {
 }
 
 
-
 // ===== fv ==========================
 #fv {
     position: relative;
@@ -355,7 +352,7 @@ header {
         background: url(../img/news-bg2.png);
         background-repeat: no-repeat;
         background-size: cover;
-        opacity: 0.3;
+        // opacity: 0.3;
         height: 116%;
         width: auto;
         aspect-ratio: 134 / 135;
@@ -364,6 +361,7 @@ header {
         right: 0;
         transform: translateY(45%);
         z-index: 0;
+        mix-blend-mode: multiply;
 
         @include m.tab {
             background: url(../img/news-bg2-sp.png);
@@ -394,7 +392,6 @@ header {
             background-repeat: no-repeat;
             background-size: cover;
             aspect-ratio: 13 / 3;
-
         }
     }
 
@@ -422,7 +419,7 @@ header {
                 }
 
                 a {
-                    width: 100%;
+                    display: block;
                     background-color: var(--white);
                     padding: 30px;
 
@@ -487,11 +484,13 @@ header {
 // ===== story ==========================
 #story {
     padding-top: 50px;
-    padding-bottom: 220px;
+    padding-bottom: 180px;
     position: relative;
 
     @include m.tab {
         padding-top: 100px;
+        padding-bottom: 200px;
+
     }
 
     @include m.tab2 {
@@ -720,13 +719,12 @@ header {
                 @include m.tab {
                     padding: 0 10px;
                     font-size: 16px;
-
                 }
             }
         }
     }
 
-    .cloud-3 {
+    .cloud-3-pc {
         position: absolute;
         top: 0;
         right: 0;
@@ -736,6 +734,22 @@ header {
 
         @include m.tab {
             width: 34%;
+            display: none;
+        }
+    }
+
+    .cloud-3-sp {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateY(-78%);
+        width: 19%;
+        z-index: 10;
+        display: none;
+
+        @include m.tab {
+            width: 34%;
+            display: block;
         }
     }
 
@@ -882,11 +896,11 @@ header {
             padding: 19px 114px;
             border-radius: 999px;
             position: relative;
+            transition: all 0.5s;
 
             @include m.tab {
                 font-size: 22px;
                 padding: 19px 45px;
-
             }
 
             &:hover {
@@ -911,6 +925,7 @@ header {
         }
     }
 }
+
 
 // ===== footer ==========================
 footer {
@@ -969,6 +984,3 @@ footer {
         }
     }
 }
-
-
-// =====  ==========================

@@ -464,8 +464,8 @@ header .wrapper .header-nav .hamburger span:nth-child(3) {
   background: url(../img/story-bg.png);
   background-repeat: no-repeat;
   background-size: contain;
-  height: auto;
-  width: 25%;
+  height: 65%;
+  width: auto;
   aspect-ratio: 17/25;
   position: absolute;
   top: 40%;
